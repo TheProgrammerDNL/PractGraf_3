@@ -7,11 +7,16 @@ public class PracticaGraf_3 extends JFrame {
    int anchoTot = (int) dim.getWidth();   //1536
    int altoTot = (int) dim.getHeight();   //864
    
-   Pixel p = new Pixel();
+   //Dimensiones de la ventana:
+   int ancho = 900;
+   int alto = 600;
+   
+   Pixel p;
    
    public PracticaGraf_3() {
-      setSize(900, 600);   //800 * 700   //1000, 700
-      setTitle("Práctica Gráfica 3");
+      p = new Pixel();
+      setSize(ancho, alto);   //800 * 700   //1000, 700
+      setTitle("Práctica Gráfica 3 - Daniel Díaz Larios");
       setLocationRelativeTo(null);
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       setVisible(true);
@@ -19,6 +24,12 @@ public class PracticaGraf_3 extends JFrame {
    
    public void paint(Graphics g) {
       super.paint(g);
+      
+      Color trianguloColor = Color.cyan;
+      Color flechaColor = Color.green;
+      Color estrellaColor = Color.magenta;
+      Color circuloColor = Color.red;
+      Color rayoColor = Color.yellow;
       
       int x, y;
       
@@ -37,7 +48,7 @@ public class PracticaGraf_3 extends JFrame {
       for (float t=0; t < 2*Math.PI; t+=0.01) {
          x += r*Math.sin(t);
          y += r*Math.cos(t);
-         p.dibujarPixel(x,y,6,Color.red,g);
+         p.dibujarPixel(x,y,6,circuloColor,g);
          
          //Reset
          x = 150;
@@ -50,39 +61,39 @@ public class PracticaGraf_3 extends JFrame {
       y = 120;
       for(int i=0; i<60; i++) {
          y++;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<60; i++) {
          x++;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<40; i++) {
          y++;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<70; i++) {
          x++;
          y--;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<70; i++) {
          x--;
          y--;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<40; i++) {
          y++;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       for(int i=0; i<60; i++) {
          x--;
-         p.dibujarPixel(x,y,6,Color.black,g);
+         p.dibujarPixel(x,y,6,flechaColor,g);
       }
       
       //TRIÁNGULO GRIS
@@ -90,18 +101,18 @@ public class PracticaGraf_3 extends JFrame {
       y = 60;
       for(int i=0; i<140; i++) {
          y++;
-         p.dibujarPixel(x,y,6,Color.gray,g);
+         p.dibujarPixel(x,y,6,trianguloColor,g);
       }
       
       for(int i=0; i<140; i++) {
          x++;
-         p.dibujarPixel(x,y,6,Color.gray,g);
+         p.dibujarPixel(x,y,6,trianguloColor,g);
       }
       
       for(int i=0; i<140; i++) {
          y--;
          x--;
-         p.dibujarPixel(x,y,4,Color.gray,g);
+         p.dibujarPixel(x,y,4,trianguloColor,g);
       }
       
       //RAYO AZUL (RELLENO)
@@ -125,6 +136,47 @@ public class PracticaGraf_3 extends JFrame {
       
       g.setColor(Color.yellow);
       g.drawPolygon(xPuntos, yPuntos, 5);
+      
+      //De Pablo:
+      for(int i=0; i<50; i++) {
+         p.dibujarPixel(600 + i, 195, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<50; i++) {
+         p.dibujarPixel(681 + i, 195, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<46; i++) {
+         p.dibujarPixel(650 + Math.round(i*15/45), 195 - i, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<46; i++) {
+         p.dibujarPixel(681 - Math.round(i*15/45), 195 - i, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<40; i++) {
+         p.dibujarPixel(600 + i, 195 + Math.round(i*24/40), 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<40; i++) {
+         p.dibujarPixel(730 - i, 195 + Math.round(i*24/40), 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<46; i++) {
+         p.dibujarPixel(640 - Math.round(i*15/45), 219 + i, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<46; i++) {
+         p.dibujarPixel(691 + Math.round(i*15/45), 219 + i, 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<40; i++) {
+         p.dibujarPixel(625 + i, 265 - Math.round(i*2/3), 3, estrellaColor, g); 
+      }
+
+      for(int i=0; i<40; i++) {
+         p.dibujarPixel(705 - i, 265 - Math.round(i*2/3), 3, estrellaColor, g); 
+      }
       
    }
    
