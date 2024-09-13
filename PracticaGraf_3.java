@@ -25,11 +25,11 @@ public class PracticaGraf_3 extends JFrame {
    public void paint(Graphics g) {
       super.paint(g);
       
-      Color trianguloColor = Color.cyan;
-      Color flechaColor = Color.green;
-      Color estrellaColor = Color.magenta;
+      Color trianguloColor = Color.gray;
+      Color flechaColor = Color.black;
+      Color estrellaColor = Color.yellow;
       Color circuloColor = Color.red;
-      Color rayoColor = Color.yellow;
+      Color rayoColor = Color.blue;
       
       int x, y;
       
@@ -121,61 +121,44 @@ public class PracticaGraf_3 extends JFrame {
       y = 450;
       
       //ESTRELLA AMARILLA
-      //ESTRELLA DE 5 PICOS
-      //Punto central
-      x = 450;
-      y = x;
-      
-      int rad = 100;
-      int apo = (int) (rad * 0.81);
-      int lado = (int) (rad * 1.175);
-      int radX = (int) (rad * 0.95);
-      int radY = (int) (rad * 0.31);      
-      int xPuntos[] = {x, x-lado/2, x+radX, x-radX, x+lado/2};
-      int yPuntos[] = {y-rad, y+apo, y-radY, y-radY, y+apo};
-      
-      g.setColor(Color.yellow);
-      g.drawPolygon(xPuntos, yPuntos, 5);
-      
-      //De Pablo:
       for(int i=0; i<50; i++) {
-         p.dibujarPixel(600 + i, 195, 3, estrellaColor, g); 
+         p.dibujarPixel(385 + i, 440, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<50; i++) {
-         p.dibujarPixel(681 + i, 195, 3, estrellaColor, g); 
+         p.dibujarPixel(466 + i, 440, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<46; i++) {
-         p.dibujarPixel(650 + Math.round(i*15/45), 195 - i, 3, estrellaColor, g); 
+         p.dibujarPixel(435 + Math.round(i*15/45), 440 - i, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<46; i++) {
-         p.dibujarPixel(681 - Math.round(i*15/45), 195 - i, 3, estrellaColor, g); 
+         p.dibujarPixel(466 - Math.round(i*15/45), 440 - i, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<40; i++) {
-         p.dibujarPixel(600 + i, 195 + Math.round(i*24/40), 3, estrellaColor, g); 
+         p.dibujarPixel(385 + i, 440 + Math.round(i*24/40), 3, estrellaColor, g); 
       }
 
       for(int i=0; i<40; i++) {
-         p.dibujarPixel(730 - i, 195 + Math.round(i*24/40), 3, estrellaColor, g); 
+         p.dibujarPixel(515 - i, 440 + Math.round(i*24/40), 3, estrellaColor, g); 
       }
 
       for(int i=0; i<46; i++) {
-         p.dibujarPixel(640 - Math.round(i*15/45), 219 + i, 3, estrellaColor, g); 
+         p.dibujarPixel(425 - Math.round(i*15/45), 464 + i, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<46; i++) {
-         p.dibujarPixel(691 + Math.round(i*15/45), 219 + i, 3, estrellaColor, g); 
+         p.dibujarPixel(476 + Math.round(i*15/45), 464 + i, 3, estrellaColor, g); 
       }
 
       for(int i=0; i<40; i++) {
-         p.dibujarPixel(625 + i, 265 - Math.round(i*2/3), 3, estrellaColor, g); 
+         p.dibujarPixel(410 + i, 510 - Math.round(i*2/3), 3, estrellaColor, g); 
       }
 
       for(int i=0; i<40; i++) {
-         p.dibujarPixel(705 - i, 265 - Math.round(i*2/3), 3, estrellaColor, g); 
+         p.dibujarPixel(490 - i, 510 - Math.round(i*2/3), 3, estrellaColor, g); 
       }
       
    }
